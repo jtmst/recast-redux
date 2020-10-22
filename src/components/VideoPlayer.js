@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 var VideoPlayer = ({video}) => (
   !video
     ? <div className="video-player">Please wait...</div>

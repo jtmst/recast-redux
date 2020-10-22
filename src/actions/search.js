@@ -13,12 +13,14 @@ var handleVideoSearch = (q) => {
     query: q,
     max: 5
   };
-  return(dispatch) => {
-    searchYouTube(options, (videos) =>
-    dispatch(changeVideoList(videos));
-    dispatch(changeVideo(video))
-  );
-  }
+  return (dispatch) => {
+    return searchYouTube(options, videos).then(
+      dispatch(changeVideoList(videos)),
+      dispatch(changeVideo(videos))
+    );
+  };
+
+
 
 
   //TODO:  Write an asynchronous action to handle a video search!
